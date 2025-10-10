@@ -1,94 +1,161 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harli Christian</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #f5f5f5;
-    }
-    .accent-red {
-      color: #ef4444;
-    }
-    .hover-underline-animation {
-      position: relative;
-    }
-    .hover-underline-animation::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      display: block;
-      margin-top: 4px;
-      right: 0;
-      background: #ef4444;
-      transition: width 0.4s ease;
-      left: 0;
-    }
-    .hover-underline-animation:hover::after {
-      width: 100%;
-    }
-  </style>
-</head>
-<body class="font-sans scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harli Christian - Portofolio & Karir Politik</title>
 
-  <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" id="home">
-    <img src="img/profile.jpg" alt="Foto Profil" class="w-32 h-32 rounded-full object-cover mb-4 border-2 border-red-500" data-aos="fade-down" />
-    <h1 class="text-4xl md:text-5xl font-bold mb-2" data-aos="fade-up">Harli Christian</h1>
-    <p class="text-lg text-gray-300 max-w-xl" data-aos="fade-up" data-aos-delay="200">[Deskripsi singkat kamu di sini]</p>
-    <a href="#kontak" class="mt-6 inline-block border border-red-500 text-red-500 px-6 py-2 rounded hover:bg-red-500 hover:text-white transition" data-aos="fade-up" data-aos-delay="400">Hubungi Saya</a>
-  </section>
+    <!-- Font Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tentang -->
-  <section class="py-20 px-6 max-w-3xl mx-auto" id="tentang">
-    <h2 class="text-2xl font-semibold accent-red mb-6" data-aos="fade-right">Tentang Saya</h2>
-    <p class="text-gray-300 leading-relaxed" data-aos="fade-up">[Isi tentang kamu nanti di sini...]</p>
-  </section>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .accent {
+        color: #fc0000;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 scroll-smooth">
+    <!-- Header -->
+    <header class="text-center py-12">
+      <h1 class="text-4xl font-semibold mb-2">Harli Christian</h1>
+      <p class="text-gray-600">Portofolio Profesional & Karir Politik</p>
+    </header>
 
-  <!-- Pengalaman -->
-  <section class="py-20 px-6 max-w-4xl mx-auto" id="pengalaman">
-    <h2 class="text-2xl font-semibold accent-red mb-6" data-aos="fade-right">Pengalaman</h2>
-    <div class="space-y-6">
-      <div class="border-l-4 border-red-500 pl-4" data-aos="fade-up">
-        <h3 class="font-bold text-lg">[Posisi / Proyek]</h3>
-        <p class="text-gray-400 text-sm">[Deskripsi singkat pengalaman]</p>
+    <!-- Hero Section -->
+    <section class="text-center py-10 px-4">
+      <img
+        src="assets/profile.jpg"
+        alt="Foto Profil Harli Christian"
+        class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-[#fc0000]"
+      />
+      <h2 class="text-2xl font-semibold mt-6 mb-2 accent">Tentang Saya</h2>
+      <p class="max-w-2xl mx-auto text-gray-700 leading-relaxed">
+        [Tulis deskripsi singkat tentang latar belakang profesional dan
+        motivasi politik kamu di sini. Misalnya: “Saya berkomitmen membangun
+        tata kelola yang transparan dan partisipatif...”]
+      </p>
+    </section>
+
+    <!-- Pengalaman Profesional -->
+    <section class="py-16 bg-gray-50 px-6">
+      <h2 class="text-3xl font-semibold text-center mb-10 accent">
+        Pengalaman Profesional
+      </h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Posisi 1]</h3>
+          <p class="text-gray-500 mb-2">[Perusahaan, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+            ini.]
+          </p>
+        </div>
+
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Posisi 2]</h3>
+          <p class="text-gray-500 mb-2">[Perusahaan, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+            ini.]
+          </p>
+        </div>
+
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Posisi 3]</h3>
+          <p class="text-gray-500 mb-2">[Perusahaan, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+            ini.]
+          </p>
+        </div>
+
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Posisi 4]</h3>
+          <p class="text-gray-500 mb-2">[Perusahaan, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+            ini.]
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Portofolio -->
-  <section class="py-20 px-6 max-w-4xl mx-auto" id="portofolio">
-    <h2 class="text-2xl font-semibold accent-red mb-6" data-aos="fade-right">Portofolio</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-[#1a1a1a] p-4 rounded shadow hover:shadow-lg transition" data-aos="zoom-in">
-        <h4 class="font-bold">[Nama Proyek]</h4>
-        <p class="text-gray-400 text-sm">[Deskripsi proyek singkat]</p>
-        <a href="#" class="text-red-500 hover-underline-animation text-sm mt-2 inline-block">Lihat Selengkapnya</a>
+    <!-- Karir Politik -->
+    <section class="py-16 px-6">
+      <h2 class="text-3xl font-semibold text-center mb-10 accent">
+        Karir Politik
+      </h2>
+      <div class="max-w-4xl mx-auto space-y-6">
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Jabatan 1]</h3>
+          <p class="text-gray-500 mb-2">[Nama Partai, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat peran dan kontribusi kamu di jabatan ini.]
+          </p>
+        </div>
+
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Jabatan 2]</h3>
+          <p class="text-gray-500 mb-2">[Nama Partai, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat peran dan kontribusi kamu di jabatan ini.]
+          </p>
+        </div>
+
+        <div class="p-6 border rounded-xl bg-white shadow-sm">
+          <h3 class="font-semibold text-lg">[Jabatan 3]</h3>
+          <p class="text-gray-500 mb-2">[Nama Partai, Tahun]</p>
+          <p class="text-gray-700 text-sm">
+            [Deskripsi singkat peran dan kontribusi kamu di jabatan ini.]
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Kontak -->
-  <section class="py-20 px-6 max-w-2xl mx-auto text-center" id="kontak">
-    <h2 class="text-2xl font-semibold accent-red mb-6" data-aos="fade-up">Hubungi Saya</h2>
-    <form action="https://formsubmit.co/harli.aramanda@gmail.com" method="POST" class="space-y-4 text-left" data-aos="fade-up" data-aos-delay="200">
-      <input type="text" name="name" placeholder="Nama" required class="w-full p-2 rounded bg-[#1a1a1a] text-white border border-gray-700" />
-      <input type="email" name="email" placeholder="Email" required class="w-full p-2 rounded bg-[#1a1a1a] text-white border border-gray-700" />
-      <textarea name="message" placeholder="Pesan" required class="w-full p-2 rounded bg-[#1a1a1a] text-white border border-gray-700" rows="4"></textarea>
-      <button type="submit" class="bg-red-500 px-4 py-2 rounded text-white hover:bg-red-600 transition">Kirim</button>
-    </form>
-  </section>
+    <!-- Kontak -->
+    <section class="py-16 bg-gray-50 px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-6 accent">Kontak</h2>
+      <p class="text-gray-700 mb-4">
+        Tertarik untuk terhubung atau berdiskusi lebih lanjut?
+      </p>
+      <p class="text-gray-800 font-medium">
+        📧
+        <a
+          href="mailto:email@domain.com"
+          class="underline hover:text-[#fc0000]"
+          >email@domain.com</a
+        >
+      </p>
+      <div class="mt-4 space-x-4">
+        <a
+          href="#"
+          class="text-gray-600 hover:text-[#fc0000] transition font-medium"
+          >LinkedIn</a
+        >
+        <a
+          href="#"
+          class="text-gray-600 hover:text-[#fc0000] transition font-medium"
+          >Instagram</a
+        >
+        <a
+          href="#"
+          class="text-gray-600 hover:text-[#fc0000] transition font-medium"
+          >Twitter</a
+        >
+      </div>
+    </section>
 
-  <footer class="text-center text-gray-500 text-sm py-6">
-    &copy; 2025 Harli Christian. Dibuat dengan ❤️ dan Tailwind CSS.
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-</body>
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500 text-sm">
+      © 2025 Harli Christian. Semua hak dilindungi.
+    </footer>
+  </body>
 </html>
