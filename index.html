@@ -1,277 +1,343 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <title>Harli Christian | Profesional & Aktivis Politik</title>
-    <meta
-      name="description"
-      content="Profil profesional dan perjalanan politik Harli Christian — membangun perubahan melalui inovasi, kolaborasi, dan integritas."
-    />
-    <meta
-      name="keywords"
-      content="Harli Christian, politik Indonesia, manajemen produk, profesional, aktivis, PSI, personal branding"
-    />
-    <meta name="author" content="Harli Christian" />
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Harli Christian — Portofolio & Karir Politik</title>
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Harli Christian",
-        "url": "https://harlichristian.my.id",
-        "sameAs": [
-          "https://www.instagram.com/harlichristian/",
-          "https://id.linkedin.com/in/harlichristian",
-          "https://x.com/harlichristian",
-          "https://github.com/harlic"
-        ],
-        "jobTitle": "Professional & Political Practitioner"
-      }
-    </script>
+    <!-- Favicon (ganti /assets/favicon.png dengan logo pribadimu) -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font -->
+    <!-- Poppins -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Icons -->
-    <script
-      src="https://unpkg.com/lucide-icons@latest/dist/umd/lucide.min.js"
-      defer
-    ></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <style>
+      :root {
+        --accent: #fc0000;
+      }
+
       body {
         font-family: "Poppins", sans-serif;
-        scroll-behavior: smooth;
       }
 
+      /* header backdrop & sticky */
       header {
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(6px);
+        background-color: rgba(255, 255, 255, 0.86);
       }
 
-      /* Fade & slide animation */
-      .fade-slide {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
+      /* social icon base + hover */
+      .social-icon {
+        transition: transform 0.35s cubic-bezier(.2,.9,.2,1), color 0.25s ease;
+        color: #111827; /* gray-900 */
+        width: 28px;
+        height: 28px;
+      }
+      .social-link:hover .social-icon {
+        transform: scale(1.12);
+        color: var(--accent);
+        filter: none;
       }
 
-      .fade-slide.visible {
-        opacity: 1;
-        transform: translateY(0);
+      /* For svg stroke color change on hover */
+      .social-link:hover svg {
+        stroke: var(--accent);
+        fill: none;
       }
 
-      .icon-hover:hover {
-        color: #fc0000;
-        transition: color 0.3s ease;
+      /* subtle card hover */
+      .card-hover {
+        transition: transform 0.4s cubic-bezier(.2,.9,.2,1), box-shadow 0.4s;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       }
     </style>
   </head>
 
-  <body class="bg-white text-gray-900">
-    <!-- Header -->
-    <header
-      class="fixed top-0 left-0 w-full z-50 bg-white/70 border-b border-gray-200"
-    >
-      <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
-        <h1 class="text-xl font-bold text-[#fc0000]">Harli Christian</h1>
-        <nav class="hidden sm:flex space-x-6 text-sm font-medium">
-          <a href="#tentang" class="hover:text-[#fc0000]">Tentang</a>
-          <a href="#politik" class="hover:text-[#fc0000]">Karir Politik</a>
-          <a href="#profesional" class="hover:text-[#fc0000]"
-            >Karir Profesional</a
-          >
-          <a href="#kontak" class="hover:text-[#fc0000]">Kontak</a>
-        </nav>
+  <body class="bg-white text-gray-900 antialiased leading-relaxed">
+    <!-- Header (sticky, name left) -->
+    <header class="fixed top-0 left-0 w-full z-50 border-b border-gray-100">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex items-center">
+        <div class="flex-1">
+          <a href="#" class="text-lg md:text-2xl font-semibold text-gray-900">
+            Harli Christian
+          </a>
+        </div>
+        <!-- small empty right area (no nav) -->
+        <div class="w-20 hidden md:block"></div>
       </div>
     </header>
 
-    <main class="pt-24">
-      <!-- Tentang Saya -->
+    <main class="pt-28">
+      <!-- Hero / Tentang Saya -->
       <section
         id="tentang"
-        class="max-w-5xl mx-auto px-6 py-16 fade-slide text-center"
+        class="text-center py-16 px-4"
+        data-aos="fade-up"
+        data-aos-duration="700"
       >
-        <img
-          src="assets/profile-placeholder.jpg"
-          alt="Foto Harli Christian"
-          class="mx-auto w-32 h-32 rounded-full object-cover shadow-lg mb-6"
-        />
-        <h2 class="text-2xl font-semibold mb-4 text-[#fc0000]">
-          Tentang Harli Christian
-        </h2>
-        <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
-          Harli Christian adalah seorang profesional dengan pengalaman di bidang
-          manajemen produk dan operasional. Ia dikenal sebagai pribadi analitis,
-          kolaboratif, dan berorientasi pada hasil. Selain karier
-          profesionalnya, Harli juga aktif dalam kegiatan politik dan sosial,
-          dengan fokus pada transparansi, inovasi, dan pemberdayaan generasi
-          muda.
-        </p>
+        <div class="max-w-3xl mx-auto">
+          <img
+            src="assets/profile.jpg"
+            alt="Foto Profil Harli Christian"
+            class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-[var(--accent)] shadow-sm"
+          />
+          <h2 class="text-3xl font-semibold mt-8 mb-4" style="color:var(--accent)">
+            Tentang Saya
+          </h2>
+          <p class="text-gray-700 text-base md:text-lg">
+            [Tulis deskripsi singkat tentang latar belakang profesional dan
+            motivasi politik kamu di sini. Contoh: “Saya berkomitmen
+            membangun tata kelola yang transparan, berorientasi pada
+            masyarakat, dan memajukan kualitas layanan publik.”]
+          </p>
+        </div>
       </section>
 
       <!-- Karir Politik -->
-      <section id="politik" class="max-w-5xl mx-auto px-6 py-16 fade-slide">
-        <h2 class="text-2xl font-semibold mb-8 text-[#fc0000] text-center">
+      <section
+        id="politik"
+        class="py-16 bg-gray-50 px-6"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <h3 class="text-3xl font-semibold text-center mb-10" style="color:var(--accent)">
           Karir Politik
-        </h2>
+        </h3>
 
-        <div class="space-y-6">
-          <!-- Placeholder politik -->
-          <div
-            class="flex flex-col sm:flex-row items-center bg-gray-50 rounded-2xl shadow p-6 gap-4"
+        <div class="max-w-4xl mx-auto space-y-6">
+          <!-- Item 1 -->
+          <article
+            class="p-6 border rounded-xl bg-white shadow-sm flex items-start gap-4 card-hover"
+            data-aos="fade-right"
           >
             <img
               src="assets/psi-logo.png"
               alt="Logo PSI"
-              class="w-16 h-16 object-contain"
+              class="w-12 h-12 object-contain rounded-md"
             />
-            <div>
-              <h3 class="font-semibold text-lg">Jabatan 1 di PSI</h3>
-              <p class="text-gray-600 text-sm">
-                Deskripsi singkat jabatan politik dan kontribusi.
+            <div class="flex-1">
+              <h4 class="font-semibold text-lg">[Jabatan 1]</h4>
+              <p class="text-sm text-gray-500 mb-2">Partai Solidaritas Indonesia — [Tahun]</p>
+              <p class="text-gray-700 text-sm">
+                [Deskripsi singkat peran dan kontribusi kamu di jabatan ini.]
               </p>
             </div>
-          </div>
+          </article>
 
-          <div
-            class="flex flex-col sm:flex-row items-center bg-gray-50 rounded-2xl shadow p-6 gap-4"
+          <!-- Item 2 -->
+          <article
+            class="p-6 border rounded-xl bg-white shadow-sm flex items-start gap-4 card-hover"
+            data-aos="fade-right"
+            data-aos-delay="80"
           >
             <img
               src="assets/psi-logo.png"
               alt="Logo PSI"
-              class="w-16 h-16 object-contain"
+              class="w-12 h-12 object-contain rounded-md"
             />
-            <div>
-              <h3 class="font-semibold text-lg">Jabatan 2 di PSI</h3>
-              <p class="text-gray-600 text-sm">
-                Deskripsi singkat jabatan politik dan kontribusi.
+            <div class="flex-1">
+              <h4 class="font-semibold text-lg">[Jabatan 2]</h4>
+              <p class="text-sm text-gray-500 mb-2">Partai Solidaritas Indonesia — [Tahun]</p>
+              <p class="text-gray-700 text-sm">
+                [Deskripsi singkat peran dan kontribusi kamu di jabatan ini.]
               </p>
             </div>
-          </div>
+          </article>
 
-          <div
-            class="flex flex-col sm:flex-row items-center bg-gray-50 rounded-2xl shadow p-6 gap-4"
+          <!-- Item 3 -->
+          <article
+            class="p-6 border rounded-xl bg-white shadow-sm flex items-start gap-4 card-hover"
+            data-aos="fade-right"
+            data-aos-delay="160"
           >
             <img
               src="assets/psi-logo.png"
               alt="Logo PSI"
-              class="w-16 h-16 object-contain"
+              class="w-12 h-12 object-contain rounded-md"
             />
-            <div>
-              <h3 class="font-semibold text-lg">Jabatan 3 di PSI</h3>
-              <p class="text-gray-600 text-sm">
-                Deskripsi singkat jabatan politik dan kontribusi.
+            <div class="flex-1">
+              <h4 class="font-semibold text-lg">[Jabatan 3]</h4>
+              <p class="text-sm text-gray-500 mb-2">Partai Solidaritas Indonesia — [Tahun]</p>
+              <p class="text-gray-700 text-sm">
+                [Deskripsi singkat peran dan kontribusi kamu di jabatan ini.]
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      <!-- Karir Profesional -->
-      <section id="profesional" class="max-w-5xl mx-auto px-6 py-16 fade-slide">
-        <h2 class="text-2xl font-semibold mb-8 text-[#fc0000] text-center">
-          Karir Profesional
-        </h2>
+      <!-- Pengalaman Profesional -->
+      <section
+        id="profesional"
+        class="py-16 px-6"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <h3 class="text-3xl font-semibold text-center mb-10" style="color:var(--accent)">
+          Pengalaman Profesional
+        </h3>
 
-        <div class="space-y-6">
-          <!-- Placeholder pekerjaan -->
-          <div class="bg-gray-50 rounded-2xl shadow p-6">
-            <h3 class="font-semibold text-lg">Posisi 1</h3>
-            <p class="text-gray-600 text-sm">
-              Nama perusahaan dan tanggung jawab utama.
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <article class="p-6 border rounded-xl bg-white shadow-sm card-hover" data-aos="zoom-in">
+            <h4 class="font-semibold text-lg">[Posisi 1]</h4>
+            <p class="text-sm text-gray-500 mb-2">[Perusahaan — Tahun]</p>
+            <p class="text-gray-700 text-sm">
+              [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+              ini.]
             </p>
-          </div>
+          </article>
 
-          <div class="bg-gray-50 rounded-2xl shadow p-6">
-            <h3 class="font-semibold text-lg">Posisi 2</h3>
-            <p class="text-gray-600 text-sm">
-              Nama perusahaan dan tanggung jawab utama.
+          <article class="p-6 border rounded-xl bg-white shadow-sm card-hover" data-aos="zoom-in" data-aos-delay="80">
+            <h4 class="font-semibold text-lg">[Posisi 2]</h4>
+            <p class="text-sm text-gray-500 mb-2">[Perusahaan — Tahun]</p>
+            <p class="text-gray-700 text-sm">
+              [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+              ini.]
             </p>
-          </div>
+          </article>
 
-          <div class="bg-gray-50 rounded-2xl shadow p-6">
-            <h3 class="font-semibold text-lg">Posisi 3</h3>
-            <p class="text-gray-600 text-sm">
-              Nama perusahaan dan tanggung jawab utama.
+          <article class="p-6 border rounded-xl bg-white shadow-sm card-hover" data-aos="zoom-in" data-aos-delay="160">
+            <h4 class="font-semibold text-lg">[Posisi 3]</h4>
+            <p class="text-sm text-gray-500 mb-2">[Perusahaan — Tahun]</p>
+            <p class="text-gray-700 text-sm">
+              [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+              ini.]
             </p>
-          </div>
+          </article>
 
-          <div class="bg-gray-50 rounded-2xl shadow p-6">
-            <h3 class="font-semibold text-lg">Posisi 4</h3>
-            <p class="text-gray-600 text-sm">
-              Nama perusahaan dan tanggung jawab utama.
+          <article class="p-6 border rounded-xl bg-white shadow-sm card-hover" data-aos="zoom-in" data-aos-delay="240">
+            <h4 class="font-semibold text-lg">[Posisi 4]</h4>
+            <p class="text-sm text-gray-500 mb-2">[Perusahaan — Tahun]</p>
+            <p class="text-gray-700 text-sm">
+              [Deskripsi singkat tanggung jawab dan pencapaian kamu di posisi
+              ini.]
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <!-- Kontak -->
-      <section id="kontak" class="bg-gray-100 py-12 fade-slide">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-2xl font-semibold mb-6 text-[#fc0000]">Kontak</h2>
-          <p class="text-gray-700 mb-6">
-            Terhubung dengan Harli Christian di platform berikut:
-          </p>
-          <div class="flex justify-center space-x-6 text-2xl">
-            <a
-              href="https://www.instagram.com/harlichristian/"
-              target="_blank"
-              class="icon-hover"
-              ><i data-lucide="instagram"></i
-            ></a>
-            <a
-              href="https://id.linkedin.com/in/harlichristian"
-              target="_blank"
-              class="icon-hover"
-              ><i data-lucide="linkedin"></i
-            ></a>
-            <a
-              href="https://x.com/harlichristian"
-              target="_blank"
-              class="icon-hover"
-              ><i data-lucide="twitter"></i
-            ></a>
-            <a
-              href="https://github.com/harlic"
-              target="_blank"
-              class="icon-hover"
-              ><i data-lucide="github"></i
-            ></a>
-          </div>
+      <!-- Kontak (akhir halaman) -->
+      <section
+        id="kontak"
+        class="py-16 bg-gray-50 px-6 text-center"
+        data-aos="fade-up"
+        data-aos-duration="700"
+      >
+        <h3 class="text-3xl font-semibold mb-6" style="color:var(--accent)">
+          Kontak
+        </h3>
+        <p class="text-gray-700 mb-4">Tertarik untuk terhubung atau berdiskusi lebih lanjut?</p>
+
+        <p class="text-gray-800 font-medium mb-4">
+          📧
+          <a href="mailto:email@domain.com" class="underline hover:text-[var(--accent)]">email@domain.com</a>
+        </p>
+
+        <div class="mt-6 flex justify-center items-center gap-6">
+          <!-- Instagram -->
+          <a
+            class="social-link"
+            href="https://www.instagram.com/harlichristian/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+              <path d="M16 11.375A4 4 0 1 1 12.625 8"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            class="social-link"
+            href="https://id.linkedin.com/in/harlichristian"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect>
+              <path d="M16 11.5a2.5 2.5 0 0 1 2.5 2.5V19"></path>
+              <path d="M8 11.5v7"></path>
+              <circle cx="8" cy="7.5" r="1.8"></circle>
+            </svg>
+          </a>
+
+          <!-- X (Twitter-like icon) -->
+          <a
+            class="social-link"
+            href="https://x.com/harlichristian"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23 4.01c-.8.35-1.66.58-2.56.69a4.48 4.48 0 0 0-7.64 4.09A12.8 12.8 0 0 1 3.16 4.48a4.48 4.48 0 0 0 1.39 5.98c-.7-.02-1.36-.21-1.94-.53v.05c0 2.2 1.56 4.04 3.63 4.46a4.5 4.5 0 0 1-2.03.08c.57 1.77 2.23 3.06 4.19 3.09A9.03 9.03 0 0 1 1 19.54a12.73 12.73 0 0 0 6.9 2.02c8.28 0 12.81-6.86 12.81-12.81v-.58A9.1 9.1 0 0 0 23 4.01z"></path>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            class="social-link"
+            href="https://github.com/harlic"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 19c-4.97 1.66-5-2.5-7-3.5"></path>
+              <path d="M20.8 7.8c-.1-.2-.4-.3-.8-.3-1.9.1-3.5 1.4-4 2.8-.5 1.6-.8 3-1.6 3.6-.8.6-2.1.7-3.6.1-1.5-.6-2.3-1.9-2.9-3.2S5.8 8 4.4 8C3.9 8 3.6 8 3.4 8.1M12 19c1.7 0 3.3-.5 4.5-1.4 1.1-.9 1.9-2.2 2.2-3.6"></path>
+              <path d="M12 3c1 1.5 2.6 2.4 4.4 2.5"></path>
+            </svg>
+          </a>
         </div>
       </section>
+
+      <!-- Footer -->
+      <footer class="py-6 text-center text-gray-500 text-sm">
+        © <span id="year"></span> Harli Christian. Semua hak dilindungi.
+      </footer>
     </main>
 
-    <footer class="text-center py-4 text-gray-500 text-sm">
-      © 2025 Harli Christian. All rights reserved.
-    </footer>
-
+    <!-- Initialization scripts -->
     <script>
-      lucide.createIcons();
+      // set copyright year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
+      // Init AOS for scroll animations
+      AOS.init({
+        once: true,
+        duration: 700,
+        easing: "ease-in-out",
+        offset: 80
+      });
 
-      document.querySelectorAll(".fade-slide").forEach((el) => {
-        observer.observe(el);
+      // enhance keyboard accessibility: focus-visible style for social links (outline)
+      document.querySelectorAll(".social-link").forEach((el) => {
+        el.addEventListener("focus", () => {
+          el.classList.add("ring-2", "ring-offset-2", "ring-gray-200");
+        });
+        el.addEventListener("blur", () => {
+          el.classList.remove("ring-2", "ring-offset-2", "ring-gray-200");
+        });
       });
     </script>
   </body>
